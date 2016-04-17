@@ -1,0 +1,45 @@
+Last login: Wed Apr  6 11:22:53 on ttys001
+mbpdeguillaume:~ guillaume$ telnet localhost 2525
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+220 mbpdeguillaume.einet.ad.eivd.ch ESMTP MockMock SMTP Server version 1.4
+421 Timeout waiting for data from client.
+Connection closed by foreign host.
+mbpdeguillaume:~ guillaume$ telnet localhost 2525
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+220 mbpdeguillaume.einet.ad.eivd.ch ESMTP MockMock SMTP Server version 1.4
+EHLO localhost
+250-mbpdeguillaume.einet.ad.eivd.ch
+250-8BITMIME
+250 Ok
+MAIL FROM: guillaume.serneels@gmail.com
+250 Ok
+MAIL TO: guillaume.serneels@gmail.com
+503 Sender already specified.
+RCPT FROM: guillaume.serneels@gmail.com
+501 Syntax: RCPT TO: <address>  Error in parameters: "FROM: guillaume.serneels@gmail.com"
+RCPT TO: guillaume.serneels@gmail.com
+250 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+Voila le mail de test
+
+.
+250 Ok
+421 Timeout waiting for data from client.
+Connection closed by foreign host.
+mbpdeguillaume:~ guillaume$ telnet localhost 2525
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+220 mbpdeguillaume.einet.ad.eivd.ch ESMTP MockMock SMTP Server version 1.4
+EHLO localhost
+250-mbpdeguillaume.einet.ad.eivd.ch
+250-8BITMIME
+250 Ok
+421 Timeout waiting for data from client.
+Connection closed by foreign host.
+mbpdeguillaume:~ guillaume$ 

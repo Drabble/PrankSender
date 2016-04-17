@@ -20,7 +20,7 @@ Inside config.properties you must define the SMTP server address, the SMTP serve
 
 ## Implementation
 
-![Class diagram](https://github.com/servietsky777/PrankSender/raw/master/figures/ClassDiagram.jpg")
+![Class diagram](https://github.com/servietsky777/PrankSender/raw/master/figures/ClassDiagram.jpg)
 
 Here is a description of each class of the diagram
 
@@ -39,7 +39,7 @@ It contains the main method. It sends the prank emails.
 
 Here is a screen shot of the disscussion with the server :
 
-![Class diagram](https://github.com/servietsky777/PrankSenderraw/master/figures/ClassDiagram.jpg")
+![Class diagram](https://github.com/servietsky777/PrankSender/raw/master/figures/ClassDiagram.jpg)
 
 ## Installing the Mock server
 

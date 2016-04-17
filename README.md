@@ -96,7 +96,7 @@ In order to get the server running you need to:
  
 * Clone the MockMock repo (https://github.com/tweakers-dev/MockMock) inside yout machine.
 
-* Build the software, if you are using Vagrant (https://www.vagrantup.com/) just like us, running the command 		'mvn clean install' from the MockMock folder will do it. This operation might take a few minutes the first 		time it's executed, since all the required librairies and files will have to be downloaded.
+* Build the software, if you are using Maven (https://maven.apache.org/) just like us, running the command 		'mvn clean install' from the MockMock folder will do it. This operation might take a few minutes the                                            first time it's executed, since all the required librairies and files will have to be downloaded.
 
 * Start the server, to achieve this we are using the "MockMock-1.4.0.one-jar.jar" java application resulting 		from the build. Simply go to the target folder in your MockMock folder and run the command:
 

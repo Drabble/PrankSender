@@ -97,7 +97,6 @@ public class ConfigurationManager {
                 // If it's the end of the message add it to the list
                 if (line.equals("==")) {
                     result.add(content.toString());
-                    System.out.println(content.toString());
                     content = new StringBuilder();
                 // Else append the line
                 } else {

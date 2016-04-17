@@ -25,21 +25,68 @@ Inside config.properties you must define the SMTP server address, the SMTP serve
 Here is a description of each class of the diagram
 
 * ConfigurationManager
-It loads the configuration from the 3 config files
+	It loads the configuration from the 3 config files
 * Group
-Model for a group. Contains the list of emails.
+	Model for a group. Contains the list of emails.
 * Message
-Model for a message. Contains the list of recipients, the sender and the content of the message.
+	Model for a message. Contains the list of recipients, the sender and the content of the message.
 * PrankGenerator
-It uses the 3 class above to split the emails in each group and create a message with random content for each group.
+	It uses the 3 class above to split the emails in each group and create a message with random content for each group.
 * SmtpClient
-It creates the connection to the SMTP server and allows email sending.
+	It creates the connection to the SMTP server and allows email sending.
 * PrankSender 
-It contains the main method. It sends the prank emails.
+	It contains the main method. It sends the prank emails.
 
-Here is a screen shot of the disscussion with the server :
+Here is a the content of a discussion with the MockMock server :
 
-![Class diagram](https://github.com/servietsky777/PrankSender/raw/master/figures/ClassDiagram.jpg)
+	220 Antoine-PC ESMTP MockMock SMTP Server version 1.4
+	250-Antoine-PC
+	250-8BITMIME
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	250 Ok
+	354 End data with <CR><LF>.<CR><LF>
+	250 Ok
+	221 Bye
 
 ## Installing the Mock server
 
@@ -53,19 +100,19 @@ In order to get the server running you need to:
 
 * Start the server, to achieve this we are using the "MockMock-1.4.0.one-jar.jar" java application resulting 		from the build. Simply go to the target folder in your MockMock folder and run the command:
 
-		 	java -jar MockMock-1.4.0.one-jar.jar -p 2525 -h 8080
+		java -jar MockMock-1.4.0.one-jar.jar -p 2525 -h 8080
 
 	The first parameter (after the -p) represent the SMTP port that will be used. Note that the default SMTP 		port for SMTP is 25, but listening to this port is usually forbiden on most sytems so we are using port 	2525 instead.
 	
 	The second parameter (after the -h) represent the http port you will need to view the graphic interface 		of MockMock and check the mails that have been sent.
 	
-* Once your server is up and running, you can run our application or you can simply connect to it using telnet 		with the command:
+* Once your server is up and running, you can run our application or you can simply connect to it using telnet with the command:
+		telnet localhost 2525
 
-			telnet localhost 2525
 
 -- To access the graphical interface and check the mails received by the MockMock server, simply open a web 		browser and go to:
 
-			localhost:8080
+	localhost:8080
 
 
 Guillaume Serneels & Antoine Drabble

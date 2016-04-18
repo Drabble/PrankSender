@@ -55,7 +55,7 @@ public class SmtpClient {
 
         for (Message message : messages) {
             // Set mail sender
-            out.println("MAIL FROM: antoine.drabble@gmail.com");
+            out.println("MAIL FROM: " + message.getFrom());
             System.out.println(in.readLine());
 
             // Set recipients

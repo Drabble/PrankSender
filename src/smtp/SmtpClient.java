@@ -16,10 +16,10 @@ import java.util.List;
  * SMTP client for sending emails
  */
 public class SmtpClient {
-    DataOutputStream out;                  // Socket writer
+    DataOutputStream out;             // Socket writer
     BufferedReader in;                // Socket reader
     private String smtpServerAddress; // SMTP server address
-    private int smtpServerPort;  // SMTP server port
+    private int smtpServerPort;       // SMTP server port
     private Socket socket;            // Socket for the connection to the SMTP server
 
     /**

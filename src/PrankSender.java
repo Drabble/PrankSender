@@ -15,9 +15,11 @@ import java.util.List;
 
 /**
  * A VERIFIER
- * Verifier que les messages reçu sont bien en 250 ???
- * Est-ce qu'il faut faire le modèle personne ???
+ * Verifier que les messages reçu sont bien en 250 ??? + Compléter la fonction sendMessages de SmtpClient
  * Modifier les emails et messages dans la configuration ???
+ * Relire le rapport ! Mettre à jour l'UML, compléter la discussion avec le server
+ * Développer un peu l'explication des classes
+ *
  */
 
 /**

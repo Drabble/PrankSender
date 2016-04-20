@@ -1,4 +1,4 @@
-# PrankSender
+# PrankSender implementation by Antoine Drabble & Guillaume Serneels
 
 ## Introduction
 

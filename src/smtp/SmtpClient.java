@@ -46,14 +46,13 @@ public class SmtpClient {
         in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 
         // Write EHLO command
-        //System.out.println(in.readLine());
+        System.out.println(in.readLine());
         out.writeBytes("EHLO pranker" + "\r\n");
-        //System.out.println("EHLO pranker");
         String s;
         do {
             s = in.readLine();
             System.out.println(s);
-        } while (!s.equals("250 Ok"));
+        } while (!s.startsWith("250 "));
 
         for (Message message : messages) {
             // Set mail sender

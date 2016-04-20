@@ -14,18 +14,6 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * A VERIFIER
- * Messages afficher par le client SMTP ??
- * Message de fin du programme dans le main ??
- *
- * Relire le rapport ! Mettre à jour l'UML, compléter la discussion avec le server
- * Développer un peu l'explication des classes
- * Est-ce que ça va avec le write ? Modifier mettre avec print ??
- * Ajouter logger ???
- * Mettre les images de la discussion
- */ 
-
-/**
  * Prank email sending application.
  * Loads the 3 configurations files from the config folder :
  * - config.properties

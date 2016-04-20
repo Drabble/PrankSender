@@ -26,7 +26,7 @@ public class SmtpClient {
     public final static String CRLF = "\r\n";
 
     /**
-     * Constructs a SMTP client with the specified address and port
+     * Create a SMTP client with the specified address and port
      *
      * @param smtpServerAddress
      * @param smtpServerPort
@@ -56,7 +56,8 @@ public class SmtpClient {
         do {
             s = in.readLine();
             System.out.println(s);
-        } while (!s.startsWith("250 "));
+        } while (!s.startsWith("250 ")); //Identify the last message sent by the server before
+                                            // being ready to receive mail sending commands
 
         for (Message message : messages) {
             // Set mail sender

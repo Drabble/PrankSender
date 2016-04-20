@@ -51,8 +51,8 @@ Here is a description of each class of the diagram
 Here is a the content of a discussion with the SMTP server of HEIG-VD :
 
 ![Discussion 1](https://github.com/servietsky777/PrankSender/raw/master/figures/chat1.png)
-![Discussion 1](https://github.com/servietsky777/PrankSender/raw/master/figures/chat1.png)
-![Discussion 1](https://github.com/servietsky777/PrankSender/raw/master/figures/chat1.png)
+![Discussion 2](https://github.com/servietsky777/PrankSender/raw/master/figures/chat2.png)
+![Discussion 3](https://github.com/servietsky777/PrankSender/raw/master/figures/chat3.png)
 
 
 ## Installing the Mock server

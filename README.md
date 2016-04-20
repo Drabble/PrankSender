@@ -14,7 +14,7 @@ There are 3 configuration files inside the config folder.
 
 messages.utf8 contains the list of email templates that will be randomly selected and sent for the pranks. The emails must be separated by a line containing the string "==".
 
-victims.utf8 contains the list of emails used for generating the groups. The email addresses must be separated by a new line separator.
+victims.utf8 contains the list of email adresses used for generating the groups. The email addresses must be separated by a new line separator.
 
 Inside config.properties you must define the SMTP server address, the SMTP server port and the number of groups you want to generate. There must be at least 3 times more emails than the number of groups.
 
@@ -25,68 +25,35 @@ Inside config.properties you must define the SMTP server address, the SMTP serve
 Here is a description of each class of the diagram
 
 * ConfigurationManager
+
 	It loads the configuration from the 3 config files
+
 * Group
+
 	Model for a group. Contains the list of emails.
+
 * Message
+
 	Model for a message. Contains the list of recipients, the sender and the content of the message.
+
 * PrankGenerator
-	It uses the 3 class above to split the emails in each group and create a message with random content for each group.
+
+	It uses the three classes above to split the email adresses between each group, determine the unique sender and all the recipients  and finally create each message with the randomly chosed content.
+
 * SmtpClient
+
 	It creates the connection to the SMTP server and allows email sending.
+
 * PrankSender 
+
 	It contains the main method. It sends the prank emails.
 
-Here is a the content of a discussion with the MockMock server :
+Here is a the content of a discussion with the SMTP server of HEIG-VD :
 
-	220 Antoine-PC ESMTP MockMock SMTP Server version 1.4
-	250-Antoine-PC
-	250-8BITMIME
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	250 Ok
-	354 End data with <CR><LF>.<CR><LF>
-	250 Ok
-	221 Bye
+![Discussion 1](https://github.com/servietsky777/PrankSender/raw/master/figures/chat1.png)
+![Discussion 1](https://github.com/servietsky777/PrankSender/raw/master/figures/chat1.png)
+![Discussion 1](https://github.com/servietsky777/PrankSender/raw/master/figures/chat1.png)
+
 
 ## Installing the Mock server
 
@@ -96,9 +63,9 @@ In order to get the server running you need to:
  
 * Clone the MockMock repo (https://github.com/tweakers-dev/MockMock) inside yout machine.
 
-* Build the software, if you are using Maven (https://maven.apache.org/) just like us, running the command 		'mvn clean install' from the MockMock folder will do it. This operation might take a few minutes the                                            first time it's executed, since all the required librairies and files will have to be downloaded.
+* Build the software, if you are using Maven (https://maven.apache.org/) just like us, running the command 	'mvn clean install' from the MockMock folder will do it. This operation might take a few minutes the                                            first time it's executed, since all the required librairies and files will have to be downloaded.
 
-* Start the server, to achieve this we are using the "MockMock-1.4.0.one-jar.jar" java application resulting 		from the build. Simply go to the target folder in your MockMock folder and run the command:
+* Start the server, to achieve this we are using the "MockMock-1.4.0.one-jar.jar" java application resulting from the build. Simply go to the target folder in your MockMock folder and run the command:
 
 		java -jar MockMock-1.4.0.one-jar.jar -p 2525 -h 8080
 

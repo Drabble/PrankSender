@@ -16,11 +16,14 @@ import java.util.List;
  * SMTP client for sending emails
  */
 public class SmtpClient {
-    DataOutputStream out;             // Socket writer
+    PrintWriter out;                  // Socket writer
     BufferedReader in;                // Socket reader
     private String smtpServerAddress; // SMTP server address
     private int smtpServerPort;       // SMTP server port
     private Socket socket;            // Socket for the connection to the SMTP server
+
+    //Constant for printing the appropriate End of line sympbol when writing
+    public final static String CRLF = "\r\n";
 
     /**
      * Constructs a SMTP client with the specified address and port
@@ -42,46 +45,54 @@ public class SmtpClient {
     public void sendMessages(List<Message> messages) throws IOException {
         // Create and connect the socket
         socket = new Socket(smtpServerAddress, smtpServerPort);
-        out = new DataOutputStream(socket.getOutputStream());
+        out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 
         // Write EHLO command
-        //System.out.println(in.readLine());
-        out.writeBytes("EHLO pranker" + "\r\n");
-        //System.out.println("EHLO pranker");
+        System.out.println(in.readLine());
+        out.printf("EHLO pranker");
+        out.printf(CRLF);
+
         String s;
         do {
             s = in.readLine();
             System.out.println(s);
-        } while (!s.equals("250 Ok"));
+        } while (!s.startsWith("250 "));
 
         for (Message message : messages) {
             // Set mail sender
-            out.writeBytes("MAIL FROM: " + message.getFrom() + "\r\n");
+            out.printf("MAIL FROM: %s", message.getFrom());
+            out.printf(CRLF);
             System.out.println(in.readLine());
 
             // Set recipients
             for (String recipient : message.getTo()) {
-                out.writeBytes("RCPT TO: " + recipient + "\r\n");
+                out.printf("RCPT TO: ", recipient);
+                out.printf(CRLF);
                 System.out.println(in.readLine());
             }
 
             // Set email content
-            out.writeBytes("DATA" + "\r\n");
+            out.printf("DATA");
+            out.printf(CRLF);
             System.out.println(in.readLine());
-            out.writeBytes("From: " + message.getFrom() + "\r\n");
-            out.writeBytes("To: ");
+            out.printf("From: " + message.getFrom());
+            out.printf(CRLF);
+            out.printf("To: ");
             for (String recipient : message.getTo()) {
-                out.writeBytes(recipient + "," );
+                out.printf("%s,", recipient );
             }
-            out.writeBytes("\r\n");
-            out.writeBytes(message.getContent()+ "\r\n");
-            out.writeBytes("." + "\r\n");
+            out.printf(CRLF);
+            out.printf(message.getContent());
+            out.printf(CRLF);
+            out.printf(".");
+            out.printf(CRLF);
             System.out.println(in.readLine());
         }
 
         // Quit smtp server
-        out.writeBytes("quit"+ "\r\n");
+        out.printf("quit");
+        out.printf(CRLF);
         System.out.println(in.readLine());
 
         // Close socket
